@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static './Css/style.css'%}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Home</title>
+</head>
+<body  style="  background-color: rgba(65, 82, 66, 0.575);">
+
+        {% block contener %}
+      
+        <section class="section22">
+            <div class="section22_top">
+                <div  class="section22_top_left">
+                    <div class="imge_gxr">
+                        <img src="{% static './imges/cont_imge/gxr_back.jpg'%}" alt="GXR_BACK">
+                    </div>
+                </div>
+                <div  class="section22_top_right">
+                    <div class="text">
+                        <p>
+                            VIP is Your Gateway to Great Deals for Car Rentals in KL. Vipcarrental.ae is one of KL's largest car dealer companies that provides a substantial collection of cars in various styles, performances, and deals. Since you’re visiting or already a resident of the great city of KL, then a car rental in KL is somewhat essential to benefit from your stay here.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="section22_down">
+                <div  class="section22_down_left">
+                    <div class="text">
+                        <p>
+                            Choosing us for your next car rental is beneficial in several ways, as we offer only the best cars in the market for you to enjoy and cruise on these glorious concrete streets. 
+                    </div>
+                </div>
+                <div  class="section22_down_right">
+                    <div class="imge_gxr">
+                        <img src="{% static './imges/cont_imge/gxr_intaly2.jpeg'%}" alt="GXR_BACK">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="section3">
+           <div class="contect">
+
+            {% for i in  all%}
+                       
+
+                    <div class="card" style="width: 18rem;">
+                <div class="img">
+                    <img class="card-img-top" src="{{i.images.url}}" alt="Card image cap">
+
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Find The New Cars</h5>
+                  <p class="card-text">Click herrto find out the latest cars and the newest VIP cars and services.</p>
+                  <a href="#"  id ="btn-primary" class="btn btn-primary">Let's Find out</a>
+                </div>
+            </div>
+                    {% endfor %}
+
+            
+            
+            
+           </div>
+        </section>
+ 
+        
+        <section class="section5">
+            <div class="section22_top">
+                <div  class="section22_top_right">
+                    <div class="text">
+                        <p>
+                            Pick the car that suits your preference and quality, for we offer all kinds of vehicles ranging from low to high prices depending on the class. 
+                        </p>
+                    </div>
+                </div>
+                <div  class=" section22_top_left">
+                    <div class="imge_gxr">
+                        <img src="{%static './imges/evz.webp'%}" alt="GXR_BACK">
+                    </div>
+                </div>
+            </div>
+            <div class="section22_down">
+                <div  class="section22_down_left">
+                    <div class="text">
+                        <p>
+                            Your safety is our number one priority when it comes to car rental in KL. Our cars are high-performance vehicles that are good as newly fresh ones that come out of the oven. Feel secure and comfortable when cruising with us.                        </p>
+                        </p>
+                    </div>
+                </div>
+                <div  class="section22_down_right">
+                    <div class="imge_gxr">
+                        <img src="{% static './imges/cont_imge/elctorn.jpg'%}" alt="GXR_BACK">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {% endblock contener %}

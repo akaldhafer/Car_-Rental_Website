@@ -1,0 +1,9 @@
+<p> are you sure to delete this {{all}}</p>
+
+<form  action="" method="post"  enctype='multipart/form-data'>
+    {% csrf_token %}
+   
+    <a href="{% url 'cars:car_detiles' all.id %}">cancel</a>
+    <button class="boxed-btn3 w-100" type="submit">dlete</button>  
+   
+</form>

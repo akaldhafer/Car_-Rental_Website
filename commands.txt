@@ -1,0 +1,28 @@
+
+
+
+
+
+
+pip install django-bootstrap4
+pip install -U django-jazzmin
+python -m pip install django
+
+
+
+
+
+
+
+
+
+
+     python -m venv env
+     source env/bin/activate
+     python manage.py createsuperuser
+     python -m pip freeze > requirements.txt
+     django-admin startproject <projectname>
+     python manage.py startapp <appname>
+     python3 manage.py runserver
+     python3 manage.py makemigrations
+     python3 manage.py  migrate

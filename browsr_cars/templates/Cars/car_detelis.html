@@ -1,0 +1,284 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="{% static './Css/detiles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <!-- Icons font CSS-->
+      <link href=" {% static 'vendor/mdi-font/css/material-design-iconic-font.min.css'%}" rel="stylesheet" media="all">
+      <link href="{% static 'vendor/font-awesome-4.7/css/font-awesome.min.css' %}" rel="stylesheet" media="all">
+      <!-- Font special for pages-->
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+  
+      <!-- Vendor CSS-->
+      <link href="{% static 'vendor/select2/select2.min.css' %}" rel="stylesheet" media="all">
+      <link href="{% static 'vendor/datepicker/daterangepicker.css' %}" rel="stylesheet" media="all">
+  
+      <!-- Main CSS-->
+      <link href="{% static '' %}Css/main.css" rel="stylesheet" media="all">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ditles</title>
+    
+</head>
+<body  style="background-color: rgba(65, 82, 66, 0.575);">
+  
+    <div class="contner">
+        <section class="section1">
+            <nav class="nav">
+                <header>
+                    <ul class="nav_header">
+                        <li><a href="{% url 'home:home'  %}">Home</a> </li>
+                        <li><a href="{% url 'cars:all_cars'  %}">Browse Cars</a> </li>
+                        <li><a href="{% url 'contact_us:contact'  %}">Contact us</a> </li>
+                        <li><a href="{% url 'abuot_team:All_employds'  %}">About our team</a> </li>
+                    </ul>
+                
+            
+            
+                </header>
+            </nav>
+        </section>
+ 
+        <section class="section2">
+            <div class="show_car">
+                <div class="col1">
+                    <div class="Social_Media">
+                        <!-- Add font awesome icons -->
+                        <a href="#" class="fa fa-facebook"></a>
+                        <a href="#" class="fa fa-twitter"></a>
+                        <a href="#" class="fa fa-google"></a>
+                        <a href="#" class="fa fa-youtube"></a>
+                        <a href="#" class="fa fa-instagram"></a>
+
+                    </div>
+                </div>
+                <div class="col2">
+                    <div class="col2_row1">
+                        <h2><strong style="color: rgb(223, 71, 54);">{{all.brand}}:</strong> {{all.model}}</h2>
+                    </div>
+                    <div class="col2_row2">
+                        <div class="col2_row2_top">
+                            <div class="model">
+                                <h3>{{all.brand }} {{all.model}}</h3>
+                            </div>
+                            <div class="price">
+                                <h2  style="color:rgb(207, 71, 71);">{{all.price}}$</h2>
+                            </div>
+                            <div class="date">
+                                <h2>{{all.generation}}</h2>
+                            </div>
+
+                        </div>
+                        <div class="col2_row2_dow">
+                            <img id="slidimge" src="{{all.images.url}}" alt="img_road">
+
+
+                        </div>
+
+                    </div>
+                    <div   class="col2_row3">
+
+                        <div class="col2_1">
+                            <img class="cars" onclick="cli(0)" src="{{all.images_2.url}}" alt="img_road">
+                        </div>
+                        <div  class="col2_1">
+                            <img class="cars"  onclick="cli(1)" src="{{all.images_3.url}}" alt="img_road">
+                        </div>
+
+                        <div  class="col2_1">
+                            <img class="cars"  onclick="cli(2)" src="{{all.images.url}}" alt="img_road">
+                        </div>
+
+                    
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="show_more" >
+                <div class="show_more_2">
+                    {% for  i in  all_car %}
+                        <div class="show_more_2_optins" >
+                        <div class="car_icone">
+                            <img src="{{i.images.url}}">
+
+                        </div>
+                        <div class="car_info">
+                            <h3>car name </h3>
+                            <p>Lorem ipsum dolor </p>
+                             <a href="{% url 'cars:car_detiles' i.id %}"  id ="btn-primary" class="btn btn-primary">Go somewhere</a>
+
+                        </div>
+
+
+
+                        
+                    </div>
+                    {% endfor %}
+                    
+                   
+
+                </div>
+            </div>
+        </section>
+        <section class="section22">
+            <div class="boutn1">
+              <a href="{% url 'cars:hi' all.id %}" id ="btn-primary" class="btn btn-primary">Rent The Car</a>
+
+            </div>
+            <div class="boutn2">
+
+                
+                <div class="right_side">
+
+                    
+                    <h2>Car Info</h2>
+
+                    <table>
+                        <tr>
+                            <th>brand</th>
+                            <th>{{all.brand}}</th>
+
+                        </tr>
+                        <tr>
+                            <td>model</td>
+                            <td>{{all.model}}</td>
+                            
+                        </tr>
+                        <tr>
+                            <td>generation</td>
+                            <td>{{all.generation}}</td>
+                         </tr>
+                        <tr>
+                            <td>start of prodetion</td>
+                            <td>{{all.start_of_prodetion}}</td>
+                         </tr>
+                        <tr>
+                            <td>contry_prodetion</td>
+                            <td>{{all.contry_prodetion}}</td>
+                         </tr>
+                        <tr>
+                            <td>doors</td>
+                            <td>{{all.doors}}</td>
+                         </tr>
+                        <tr>
+                            <td>colors</td>
+                            <td>{{all.colors}}</td>
+                            
+                         </tr>
+
+                         <tr>
+                            <td>status</td>
+                            <td>{{all.status}}</td>
+                         </tr>
+
+                         <tr>
+                            <td>price</td>
+                            <td>{{all.price}}</td>
+                         </tr>
+
+                         <tr>
+                            <td>option</td>
+                            <td>{{all.option}}</td>
+                         </tr>
+
+                         <tr>
+                            <td>namber_of_cylinder</td>
+                            <td>{{all.namber_of_cylinder}}</td>
+                         </tr>
+
+                         <tr>
+                            <td>power_of_push</td>
+                            <td>{{all.power_of_push}}</td>
+                         </tr>
+                         <tr>
+                            <td>high_speed</td>
+                            <td>{{all.high_speed}}</td>
+                         </tr>
+                         <tr>
+                            <td>discreptions</td>
+                            <td>{{all.disc}}</td>
+                         </tr>
+                         <tr>
+                            <td>published_at</td>
+                            <td>{{all.published_at}}</td>
+                         </tr>
+                    </table>
+
+
+                </div>
+
+                    
+            </div>
+
+        </section>
+        </form>
+
+
+
+        <section class="section6" style="height:10rem">
+           
+            <div class="card" style="width: 100%; text-align:center; background-color: rgb(46, 46, 46)" >
+                <h4>about  us</h4>
+                <ul style="list-style: none;">
+                    <li>  Let’s find for you a car<pr> suites your need ! </li>
+                     <li>admin@vipcar.com
+                    </li>
+                    <li>0060123455677
+                    </li>
+                    
+                </ul> 
+                
+            </div>
+             
+            
+        </section>
+
+    </div>
+    <script>
+
+        let slides = document.getElementById('slidimge');
+        var cars = document.getElementsByClassName("cars");
+        console.log('strrting..........');
+        console.log(slides.src, cars);
+        function cli(n){
+            slides.src = cars[n].src
+
+         
+
+        }
+
+
+
+    </script>
+    <script src="{% static './vendor/jquery/jquery.min.js ' %}"></script>
+    <!-- Vendor JS-->
+    <script src="{% static ' ./vendor/select2/select2.min.js' %}"></script>
+    <script src=" {% static ' ./vendor/datepicker/moment.min.js' %}"></script>
+    <script src="{% static './vendor/datepicker/daterangepicker.js' %}"></script>
+    <!-- Main JS-->
+    <script src="{% static './js/global.js' %}"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,123 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static './Css/abuot_us.css' %}">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>about_us</title>
+</head>
+<body  style="  background-color: rgba(65, 82, 66, 0.575);">
+
+
+    <div class="contner">
+
+        <section class="section1">
+            <nav class="nav">
+                <header>
+                    <ul class="nav_header">
+                        <li><a href="{% url 'home:home'  %}">Home</a> </li>
+                        <li><a href="{% url 'cars:all_cars'  %}">Browse Cars</a> </li>
+                        <li><a href="{% url 'contact_us:contact'  %}">Contact us</a> </li>
+                        <li><a href="{% url 'abuot_team:All_employds'  %}">About our team</a> </li>
+                    </ul>
+            
+                </header>
+            </nav>
+        </section>
+        <section class="section2">
+            <div>
+                <h2 style="color: rgba(0, 0, 0);"><span>WM</span> <span> VIP </span> Car Rental</h2>
+            </div>
+            <div class="section2_div">
+                <img style="max-width: 100%;height: auto" src="{% static './imges/cont_imge/slide-2.jpg'%}">
+            </div>
+            <div class="hder_titile">
+                <h3>The Right Place to<br> Find Your Special Car</h4>
+            </div>
+
+            <div class="hder_titile_coler">
+                <h1> Welcome to WM<br>VIP Car Rental</h1>
+            </div>
+        </section>
+        <section class="section22">
+            <div class="life_side" style="background-color: rgba(240, 248, 255, 0.274);">
+
+                {% for i in  all %}
+                <div class="inner">
+                   <div class="box_img">
+                       <div><img class="card-img-top" src="{{i.images.url}}" alt="Card image cap"></div>
+                   </div>
+                   <div class="box_info">
+                       <div class="onfo">
+                           <h4>{{i.name}}</h4>
+                           <p>Hi, I am more than happy to serve you !</p>
+                       </div>
+                         <a href="{% url 'abuot_team:car_employds' i.id %}"  id ="btn-primary" class="btn btn-primary">Get More</a>
+
+                   </div>
+                </div>
+                {% endfor %}
+                
+            </div>
+
+            <div class="right_side">
+                <div class="new">
+                    <h3>Your VIP Service</h3>
+                    <p>
+                        VIP is Your Gateway to Great Deals for Car Rentals in KL. Vipcarrental.ae is one of KL's largest car dealer companies that provides a substantial collection of cars in various styles, performances, and deals. Since you’re visiting or already a resident of the great city of KL, then a car rental in KL is somewhat essential to benefit from your stay here.
+                    </p>
+                </div>
+                <div class="new">
+                    <h3>Your Choice</h3>
+                    <p>
+                        Choosing us for your next car rental is beneficial in several ways, as we offer only the best cars in the market for you to enjoy and cruise on these glorious concrete streets. 
+                    </p>
+                </div>
+                <div class="new">
+                    <h3>Your Car</h3>
+                    <p>
+                        Pick the car that suits your preference and quality, for we offer all kinds of vehicles ranging from low to high prices depending on the class. 
+                    </p>
+                </div>
+                <div class="new">
+                    <h3>Your VIP Service</h3>
+
+                    <p>
+                        Your safety is our number one priority when it comes to car rental in KL. Our cars are high-performance vehicles that are good as newly fresh ones that come out of the oven. Feel secure and comfortable when cruising with us.                        </p>
+                    </p>
+
+                </div>
+            </div>
+
+           
+        </section>
+
+        <section class="section6">
+           
+            <div class="card" style="width: 100%; text-align:center; background-color: rgb(46, 46, 46)" >
+                <h4>Contact Us</h4>
+                <ul style="list-style: none;">
+                    <li>  Let’s find for you a car<pr> suites your need ! </li>
+                     <li>admin@vipcar.com
+                    </li>
+                    <li>0060123455677 WhatsApp Available !
+                    </li>
+                    
+                </ul> 
+                
+            </div>
+            
+        </section>
+
+    </div>
+
+   
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

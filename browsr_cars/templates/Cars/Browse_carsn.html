@@ -1,0 +1,147 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static './Css/browse.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Browse cars</title>
+</head>
+<body  style="  background-color: rgba(65, 82, 66, 0.575);">
+
+
+    <div class="contner">
+
+        <section class="section1">
+            <nav class="nav">
+                <header>
+                    <ul class="nav_header">
+                        <li><a href="{% url 'home:home'  %}">Home</a> </li>
+                        <li><a href="{% url 'cars:all_cars'  %}">Browse Cars</a> </li>
+                        <li><a href="{% url 'contact_us:contact'  %}">Contact us</a> </li>
+                        <li><a href="{% url 'abuot_team:All_employds'  %}">About our team</a> </li>
+                    </ul>
+                
+                </header>
+            </nav>
+        </section>
+        <section class="section2">
+            <div>
+                <h2 style="color: rgba(0, 0, 0);"><span>WM</span> <span> VIP </span> Car Rental</h2>
+            </div>
+            <div class="section2_div">
+                <img style="max-width: 100%;height: auto" src="{% static './imges/cont_imge/slide-2.jpg'%}">
+            </div>
+            <div class="hder_titile">
+                <h3>The Right Place to<br> Find Your Special Car</h4>
+            </div>
+        </section>
+        <section class="section22">
+            <div class="section22_top" style="height: 30%;">
+                <div class="top_1">
+                    <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Best Cars</h5>
+                          <p class="card-text">Find the best cars in WM VIP CAR RETAIL. Contact us to find more about our special cars and offers</p>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title">Best Service</h5>
+                        <p class="card-text">Find the best service in WM VIP CAR RETAIL. Contact us to find more about our special service and offers</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                      </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Best Quality</h5>
+                          <p class="card-text">Find the best quality in WM VIP CAR RETAIL. Contact us to find more about our quality insurence</p>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="top_2">
+                    <div class="img"   style="width: 100%; height: 100%;">
+                        <img src=" {% static './imges/cont_imge/toyota-camry-2021-gallery-01-full_tcm-11-2203475.jpg'%}"  style="width: 100%; height: 200%;" alt="tyoto car home">
+                    </div>
+                </div>
+                <div class="top_opslot"></div>
+
+            </div>
+
+            <div class="section22_down " style="height: 100%;">
+                <div class="card-columns">
+
+                    {% for i in  all%}
+                        <div class="card">
+                        <img class="card-img-top" src="{{i.images.url}}" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">{{i.brand}}</h5>
+                          <p class="card-text">Find more about this car !.</p>
+                          <a href="{% url 'cars:car_detiles' i.id %}"  id ="btn-primary" class="btn btn-primary">Let's Find out</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    
+                </div>
+            </div>
+
+            <div class="progras">
+                <div class="itme_progras">
+
+
+                    {% if all.has_previous %}
+                        <li><a href="?page={{ all.previous_page_number }}"> <i >back</i> </a></li>
+                    {% endif %}
+                    {% for i in all.paginator.page_range %}
+                        <li><a href="?page={{i}}"><span>{{i}}</span></a></li>
+                    {% endfor %}
+                                                
+                    {% if all.has_next %}
+                        <li><a href="?page={{ all.paginator.num_pages }}"> <i >next</i> </a></li>
+                    {%endif%}
+
+                </div>
+            </div>
+
+        </section>
+
+       
+       
+       
+         
+
+        <section class="section6" style="height:10rem">
+           
+            <div class="card" style="width: 100%; text-align:center; background-color: rgb(46, 46, 46)" >
+                <h4>about  us</h4>
+                <ul style="list-style: none;">
+                    <li>  Let’s find for you a car<pr> suites your need ! </li>
+                     <li>admin@vipcar.com
+                    </li>
+                    <li>0060123455677
+                    </li>
+                    
+                </ul> 
+                
+            </div>
+             
+            
+        </section>
+
+
+    </div>
+
+    
+   
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

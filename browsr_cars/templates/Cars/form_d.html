@@ -1,0 +1,304 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="{% static './Css/detiles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <!-- Icons font CSS-->
+      <link href=" {% static 'vendor/mdi-font/css/material-design-iconic-font.min.css'%}" rel="stylesheet" media="all">
+      <link href="{% static 'vendor/font-awesome-4.7/css/font-awesome.min.css' %}" rel="stylesheet" media="all">
+      <!-- Font special for pages-->
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+  
+      <!-- Vendor CSS-->
+      <link href="{% static 'vendor/select2/select2.min.css' %}" rel="stylesheet" media="all">
+      <link href="{% static 'vendor/datepicker/daterangepicker.css' %}" rel="stylesheet" media="all">
+  
+      <!-- Main CSS-->
+      <link href="{% static '' %}Css/main.css" rel="stylesheet" media="all">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ditles</title>
+</head>
+<body style="    background-color: rgb(75, 75, 75);">
+
+    <style>
+        body{
+
+            background: linear-gradient(to right, #297072 0%, #b3afb4 100%);
+
+        }
+
+        .cent{
+
+            width: 70rem;
+            height: 45rem;
+            margin: auto;
+            margin-top: 150px;
+ 
+    }
+        .conterin_1{
+
+            width: 100%;
+            height: 100%;
+            background-color: rgb(238, 238, 238);
+            display: flex;
+        }
+        .left_1_1{
+
+            width: 40%;
+            height: 100%;
+        }
+
+        .hight_1_1{
+            width: 60%;
+            height: 100%;
+            background-color: blueviolet;
+        }
+        .header_of_c{
+            width: 100%;
+            height: 10%;
+            background-color: rgb(177, 40, 74);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .body_of_car{
+            width: 100%;
+            height: 65%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .di_w{
+
+            width: 50%;
+            height: 50%;
+
+
+
+        }
+
+        .di_w .imge{
+            width: 100%;
+            height: 100%;
+            margin: 20px;
+            transition: 1.5s;
+
+        }
+
+        .di_w .imge img{ 
+            width: 100%;
+            height: 100%;
+            transition: 1.5s;
+            
+        }
+        .the_ather{
+            width: 100%;
+            height: 25%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: rgb(19, 19, 19);
+
+        }
+        .c1{
+            width: 30%;
+            height: 95%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 30px;
+            background-color: dimgrey;
+
+        }
+        .c1 img{
+
+            width: 100%;
+            height: 100%;
+
+
+        }
+    </style>
+
+
+
+    <div class="cent">
+
+
+        <div class="conterin_1">
+            <div class="left_1_1">
+               
+                <div class="header_of_c">
+                    <h2 class="title">Car you selected </h2>
+                </div>
+                <div class="body_of_car">
+                    <h4><h3>{{all.brand }} {{all.model}}</h3></h4>
+                    <div class="di_w">
+                        <div class="imge">
+                            <img id="slidimge"  src="{{all.images.url}}" alt="img_road">
+                        </div> 
+                    </div>
+                </div>
+                <div class="the_ather">
+                    <div class="c1">
+                        <div class="col2_1">
+                            <img class="cars" onclick="cli(0)" src="{{all.images_2.url}}" alt="img_road">
+                        </div>
+                        
+
+                       
+
+                    </div>
+                    <div class="c1"><div  class="col2_1">
+                        <img class="cars"  onclick="cli(1)" src="{{all.images_3.url}}" alt="img_road">
+                    </div></div>
+                    <div class="c1"> <div  class="col2_1">
+                        <img class="cars"  onclick="cli(2)" src="{{all.images.url}}" alt="img_road">
+                    </div></div>
+        
+                </div>
+    
+            
+            </div>
+            <div class="hight_1_1">
+                <div style="margin-top: -30px;" class="card card-5">
+                    <div class="card-heading">
+                        <h2 class="title">Event Registration Form</h2>
+                    </div>
+                    <div class="card-body">
+                        <form method="POST">
+                            <div class="form-row m-b-55">
+                                <div class="name">Name</div>
+                                <div class="value">
+                                    <div class="row row-space">
+                                        <div class="col-2">
+                                            <div class="input-group-desc">
+                                                <input class="input--style-5" type="text" name="first_name">
+                                                <label class="label--desc">first name</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="input-group-desc">
+                                                <input class="input--style-5" type="text" name="last_name">
+                                                <label class="label--desc">last name</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="name"> Car name</div>
+                                <div class="value">
+                                    <div class="input-group">
+                                        <input class="input--style-5" type="text"  value="{{all.brand  }}  {{all.model}} {{all.price}}" name="company">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="name">Email</div>
+                                <div class="value">
+                                    <div class="input-group">
+                                        <input class="input--style-5" type="email" name="email">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row m-b-55">
+                                <div class="name">Phone</div>
+                                <div class="value">
+                                    <div class="row row-refine">
+                                        <div class="col-3">
+                                            <div class="input-group-desc">
+                                                <input class="input--style-5" type="text" name="area_code">
+                                                <label class="label--desc">Area Code</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-9">
+                                            <div class="input-group-desc">
+                                                <input class="input--style-5" type="text" name="phone">
+                                                <label class="label--desc">Phone Number</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="name">Subject</div>
+                                <div class="value">
+                                    <div class="input-group">
+                                        <div class="rs-select2 js-select-simple select--no-search">
+                                            <select name="subject">
+                                                <option value="With Dr">With Dr</option>
+                                                <option value="Without Dr">Without Dr</option>
+                                            </select>
+                                            <div class="select-dropdown"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row p-t-20">
+                                <label class="label label--block">Are you an existing customer?</label>
+                                <div class="p-t-15">
+                                    <label class="radio-container m-r-55">Yes
+                                        <input type="radio" checked="checked" value="Yes" name="exist">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="radio-container">No
+                                        <input type="radio" value="No" name="exist">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div>
+                                <button class="btn btn--radius-2 btn--red" type="submit">Register</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+   
+
+
+
+
+    <script>
+
+        let slides = document.getElementById('slidimge');
+        var cars = document.getElementsByClassName("cars");
+        console.log('strrting..........');
+        console.log(slides.src, cars);
+        function cli(n){
+            slides.src = cars[n].src
+
+         
+
+        }
+
+
+
+    </script>
+    
+    <script src="{% static './vendor/jquery/jquery.min.js ' %}"></script>
+    <!-- Vendor JS-->
+    <script src="{% static ' ./vendor/select2/select2.min.js' %}"></script>
+    <script src=" {% static ' ./vendor/datepicker/moment.min.js' %}"></script>
+    <script src="{% static './vendor/datepicker/daterangepicker.js' %}"></script>
+
+    <!-- Main JS-->
+    <script src="{% static './js/global.js' %}"></script>
+</body>
+</html>
+

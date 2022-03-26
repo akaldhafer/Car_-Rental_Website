@@ -1,0 +1,154 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static './Css/abuot_us.css' %}">
+        <link rel="stylesheet" href="{% static './Css/profi.css' %}">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>about_us</title>
+</head>
+<body style="  background-color: rgba(65, 82, 66, 0.575);">
+
+ 
+
+    <div class="contner">
+
+        <section class="section1">
+            <nav class="nav">
+                <header>
+
+                    <ul class="nav_header">
+                        <li><a href="{% url 'home:home'  %}">Home</a> </li>
+                        <li><a href="{% url 'cars:all_cars'  %}">Browse thecars </a> </li>
+                        <li><a href="{% url 'contact_us:contact'  %}">contact us</a> </li>
+                        <li><a href="{% url 'abuot_team:All_employds'  %}">about team</a> </li>
+                    </ul>
+                
+                </header>
+            </nav>
+        </section>
+        <section class="section2">
+            <div class="section2_div">
+                <img src="{% static './imges//cont_imge/tndara.jpg'%}">
+            </div>
+            <div class="hder_titile">
+                <h2><span>WM</span> <span>VIP</span>Car Rental</h2>
+                <h4>Double Cab VIII (facelift 2020)<br> 2.4 D-4D (150 Hp) 4x4</h4>
+            </div>
+
+            <div class="hder_titile_coler">
+                <h1> welcome on WM<br> Car Rental </h1>
+            </div>
+        </section>
+        <section class="section22">
+            <section class="section about-section gray-bg" id="about">
+        <div class="container" style="background-color: rgba(240, 248, 255, 0.212);">
+            <div  style="background-color: rgba(240, 248, 255, 0.212);" class="row align-items-center flex-row-reverse">
+                <div  style="background-color: rgba(240, 248, 255, 0.212);" class="col-lg-6">
+                    <div  style="background-color: rgba(240, 248, 255, 0.212);" class="about-text go-to">
+                        <h3 class="dark-color">About {{all.name}}</h3>
+                        <p> {{all.disc}}.</p>
+                        <div class="row about-list">
+                            <div class="col-md-6">
+                            
+                               
+                                <div class="media">
+                                    <label>Residence</label>
+                                    <p>{{all.loction}}</p>
+                                </div>
+                                <div class="media">
+                                    <label>Address</label>
+                                    <p>{{all.loction}}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="media">
+                                    <label>E-mail</label>
+                                    <p>{{all.email}}</p>
+                                </div>
+                                <div class="media">
+                                    <label>Phone</label>
+                                    <p>{{all.namber_of_phone}}</p>
+                                </div>
+                                <div class="media">
+                                    <label>facebook</label>
+                                    <p>{{all.facebook}}</p>
+                                </div>
+                                <div class="media">
+                                    <label>Twitter</label>
+                                    <p>{{all.Twitter}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-avatar">
+                        <img src="{{all.images.url}}" title="" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="counter">
+                <div class="row">
+                    <div class="col-6 col-lg-3">
+                        <div class="count-data text-center">
+                            <h6 class="count h2" data-to="500" data-speed="500">{{all.Experience}}</h6>
+                            <p class="m-0px font-w-600">Experience</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="count-data text-center">
+                            <h6 class="count h2" data-to="150" data-speed="150">{{all.stars}}</h6>
+                            <p class="m-0px font-w-600">Stars</p>
+                        </div>
+                    </div>
+                  
+                </div>
+            </div>
+        </div>
+    </section>
+        
+            
+
+            
+
+           
+        </section>
+
+        
+       
+           
+
+     
+        <section class="section6" style="height:10rem">
+           
+            <div class="card" style="width: 100%; text-align:center; background-color: rgb(46, 46, 46)" >
+                <h4>about  us</h4>
+                <ul style="list-style: none;">
+                    <li>  Let’s find for you a car<pr> suites your need ! </li>
+                     <li>admin@vipcar.com
+                    </li>
+                    <li>0060123455677
+                    </li>
+                    
+                </ul> 
+                
+            </div>
+             
+            
+        </section>
+
+
+    </div>
+
+    
+   
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
