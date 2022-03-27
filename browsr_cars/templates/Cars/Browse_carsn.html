@@ -39,7 +39,7 @@
                 <h3>The Right Place to<br> Find Your Special Car</h4>
             </div>
         </section>
-        <section class="section22">
+        <section class="section22" style = "height: auto">
             <div class="section22_top" style="height: 30%;">
                 <div class="top_1">
                     <div class="card">
@@ -74,7 +74,7 @@
 
             </div>
 
-            <div class="section22_down " style="height: 100%;">
+            <div class="section22_down " style="height: auto;">
                 <div class="card-columns">
 
                     {% for i in  all%}
@@ -92,9 +92,7 @@
             </div>
 
             <div class="progras">
-                <div class="itme_progras">
-
-
+                <div  class="itme_progras">
                     {% if all.has_previous %}
                         <li><a href="?page={{ all.previous_page_number }}"> <i >back</i> </a></li>
                     {% endif %}
@@ -119,7 +117,7 @@
         <section class="section6" style="height:10rem">
            
             <div class="card" style="width: 100%; text-align:center; background-color: rgb(46, 46, 46)" >
-                <h4>about  us</h4>
+                <h4>Contact Us</h4>
                 <ul style="list-style: none;">
                     <li>  Let’s find for you a car<pr> suites your need ! </li>
                      <li>admin@vipcar.com
